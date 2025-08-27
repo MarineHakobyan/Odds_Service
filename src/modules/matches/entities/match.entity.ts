@@ -1,4 +1,4 @@
-import { IOdds } from '../../common/types/odds.interface';
+import { IOdds } from '../../../common/types/odds.interface';
 
 export class Match {
   constructor(

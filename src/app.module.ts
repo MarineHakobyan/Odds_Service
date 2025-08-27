@@ -2,8 +2,8 @@ import { Module } from '@nestjs/common';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { MatchesModule } from './matches/matches.module';
-import { BetsModule } from './bets/bets.module';
+import { MatchesModule } from './modules/matches/matches.module';
+import { BetsModule } from './modules/bets/bets.module';
 
 @Module({
   imports: [MatchesModule, BetsModule],
