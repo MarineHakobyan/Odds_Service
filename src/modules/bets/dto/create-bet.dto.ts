@@ -2,9 +2,11 @@ import { Type } from 'class-transformer';
 import { IsEnum, IsNumber, IsPositive, IsUUID } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
+import { TCreateBet } from '../../../common/types/bet.interface';
+
 export type PickOption = 'home' | 'draw' | 'away';
 
-export class CreateBetDto {
+export class CreateBetDto implements TCreateBet {
   @IsUUID()
   @ApiProperty()
   matchId: string;

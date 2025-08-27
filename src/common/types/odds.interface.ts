@@ -4,3 +4,5 @@ export interface IOdds {
   away: number;
   version: number;
 }
+
+export type TCreateOdd = Omit<IOdds, 'version'>;

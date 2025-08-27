@@ -4,18 +4,19 @@ import { MatchesService } from './matches.service';
 import { CreateMatchDto } from './dto/create-match.dto';
 import { UpdateOddsDto } from './dto/update-odds.dto';
 import { OddsResponseDto } from './dto/odds-response.dto';
+import { MatchesResponseDto } from './dto/matches-response.dto';
 
 @Controller('matches')
 export class MatchesController {
   constructor(private readonly matchesService: MatchesService) {}
 
   @Post()
-  create(@Body() dto: CreateMatchDto) {
+  create(@Body() dto: CreateMatchDto): MatchesResponseDto {
     return this.matchesService.create(dto);
   }
 
   @Patch(':id/odds')
-  updateOdds(@Param('id') id: string, @Body() dto: UpdateOddsDto) {
+  updateOdds(@Param('id') id: string, @Body() dto: UpdateOddsDto): OddsResponseDto {
     return this.matchesService.updateOdds(id, dto);
   }
 

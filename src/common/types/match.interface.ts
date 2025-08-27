@@ -1,9 +1,11 @@
-import { IOdds } from './odds.interface';
+import { TCreateOdd } from './odds.interface';
 
 export interface IMatch {
-  id: string;
+  id?: string;
   homeTeam: string;
   awayTeam: string;
   startsAt: string;
-  odds: IOdds;
+  odds: TCreateOdd;
 }
+
+export type TCreateMatch = Omit<IMatch, 'id'>;

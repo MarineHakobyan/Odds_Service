@@ -8,7 +8,10 @@ import {
 } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
-export class OddsDto {
+import { TCreateOdd } from '../../../common/types/odds.interface';
+import { TCreateMatch } from '../../../common/types/match.interface';
+
+export class OddsDto implements TCreateOdd {
   @ApiProperty()
   @IsNumber({ maxDecimalPlaces: 2 }, { message: 'Home odds invalid' })
   @Min(1.01, { message: 'Home odds too low' })
@@ -25,7 +28,7 @@ export class OddsDto {
   away: number;
 }
 
-export class CreateMatchDto {
+export class CreateMatchDto implements TCreateMatch {
   @ApiProperty()
   @IsNotEmpty({ message: 'Home team required' })
   homeTeam: string;
